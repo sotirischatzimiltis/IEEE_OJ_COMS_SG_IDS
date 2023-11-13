@@ -26,20 +26,8 @@ num_epochs = 40
 log_steps = 32
 
 """Data Manipulation"""
-# TRAIN_FILE = "../NewDatasets/multiclass_train.csv"
-# TEST_FILE = "../NewDatasets/multiclass_test.csv"
 TRAIN_FILE = "../NewDatasets/SMOTEtrain.csv"
 TEST_FILE = "../NewDatasets/SMOTEtest.csv"
-# TRAIN_FILE = "../NewDatasets/adasyntrain.csv"
-# TEST_FILE = "../NewDatasets/adasyntest.csv"
-# TRAIN_FILE = "../NewDatasets/border_SMOTEtrain.csv"
-# TEST_FILE = "../NewDatasets/border_SMOTEtest.csv"
-# TRAIN_FILE = "../NewDatasets/smotetomektrain.csv"
-# TEST_FILE = "../NewDatasets/smotetomektest.csv"
-# TRAIN_FILE = "../NewDatasets/border_smotetomektrain.csv"
-# TEST_FILE = "../NewDatasets/border_smotetomektest.csv"
-# TRAIN_FILE = "../NewDatasets/adasyntomektrain.csv"
-# TEST_FILE = "../NewDatasets/adasyntomektest.csv"
 train_df = pd.read_csv(TRAIN_FILE)
 test_df = pd.read_csv(TEST_FILE)
 
