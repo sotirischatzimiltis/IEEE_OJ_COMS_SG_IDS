@@ -206,7 +206,7 @@ y_train = pd.DataFrame(y_train)
 y_train.columns = ['label']
 train_frame = [x_train, y_train]
 train_final = pd.concat(train_frame, axis=1)
-train_final.to_csv('train_multiclass20.csv', index=False)
+train_final.to_csv('train_multiclass.csv', index=False)
 
 x_test = pd.DataFrame(x_test)
 x_test.columns = col_names
@@ -214,7 +214,7 @@ y_test = pd.DataFrame(y_test)
 y_test.columns = ['label']
 test_frame = [x_test, y_test]
 test_final = pd.concat(test_frame, axis=1)
-test_final.to_csv('test_multiclass20.csv', index=False)
+test_final.to_csv('test_multiclass.csv', index=False)
 
 
 """ Min Max Scaling """
@@ -231,7 +231,7 @@ y_train = pd.DataFrame(y_train)
 y_train.columns = ['label']
 train_frame = [x_train, y_train]
 train_final = pd.concat(train_frame, axis=1)
-train_final.to_csv('train_multiclass_scaled20.csv', index=False)
+train_final.to_csv('train_multiclass_scaled.csv', index=False)
 
 x_test = pd.DataFrame(x_test)
 x_test.columns = col_names
@@ -239,7 +239,7 @@ y_test = pd.DataFrame(y_test)
 y_test.columns = ['label']
 test_frame = [x_test, y_test]
 test = pd.concat(test_frame, axis=1)
-test.to_csv('test_multiclass_scaled20.csv', index=False)
+test.to_csv('test_multiclass_scaled.csv', index=False)
 
 
 
