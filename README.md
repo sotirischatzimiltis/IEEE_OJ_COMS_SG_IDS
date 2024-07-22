@@ -9,98 +9,23 @@ better solutions in the topic of smart grids (SGs). An SDN-based SG promises to 
 
 Data traffic is captured, and passed through the pre-processing stage, and then either split learning or federated learning is used.
 
-  
-
-## Helpful Documentation
-### Installation 
-It is highly recommended to use Colaboratory ([Colab](https://colab.research.google.com/notebooks/welcome.ipynb)) to run the notebooks, because it allows to write and execute Python code in a browser with:
-
-- Zero configuration required
-- Free access to GPUs and TPUs
-- Most libraries pre-installed
-- Only one requirement, a google account
-- Most common Machine Learning frameworks pre-installed and ready to use
-
-> Note: if you are not going to use Google Colab you will need to make sure that you satisfy the below requirements
-
-#### Requirements
-- MatplotLib (== 3.7.1)
-- PyTorch (== 2.0.1)
-- Sklearn (== 1.3.0)
-- Numpy (== 1.24.3)
-- Imbens (== 0.2.1)
-- Tabulate (== 0.8.10)
-- Seaborn (== 0.12.2)
-- mpi4py (== 3.1.4)
-- Pandas (== 1.5.3)
-- Imblearn (== 0.11.0)
-- Flwr (== 1.5.0)
-- Tqdm (== 4.65.0)
-
 ### Usage 
   #### Prepare Data
   In order to prepare your data follow the steps below:
 
-  1. Download one of the following scripts depending on the desired experiment
-[binary_classification_std_scaler](https://github.com/sotirischatzimiltis/MscThesis/blob/main/DataPreProcessing/BinaryClassification/nsl_kdd_preprocessing_binary_stdscaler.ipynb),
-[binary_classification_minmax_scaler](https://github.com/sotirischatzimiltis/MscThesis/blob/main/DataPreProcessing/BinaryClassification/nsl_kdd_preprocessing_binary_minmaxscaler.ipynb),
-[multiclass_classification_std_scaler](https://github.com/sotirischatzimiltis/MscThesis/blob/main/DataPreProcessing/MultiClassClassification/nsl_kdd_preprocessing_multiclass_stdscaler.ipynb),
-[multiclass_classification_minmax_scaler](https://github.com/sotirischatzimiltis/MscThesis/blob/main/DataPreProcessing/MultiClassClassification/nsl_kdd_preprocessing_multiclass_minmaxscaler.ipynb)
-  > Note: Alternatively launch the desired script using the launch button 
+  1. Download the following script [nsl_kdd_multiclass_preprocessing.py](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/nsl_kdd_multiclass_preprocessing.py),
 
   2. If you want to process the NSLKDD dataset in a different way you can download it from [here](https://www.unb.ca/cic/datasets/nsl.html)
-    
-  3. Open [Colab](https://colab.research.google.com/notebooks/welcome.ipynb) and sign in to your Google account. If you do not have a Google account, you can create one [here](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp).
-
-  4. Go to _File > Upload notebook > Choose file_ and browse to find the downloaded notebook. If you have already uploaded the notebook to Colab you can open it with _File > Open notebook_ and choose the desired notebook. 
   
-#### Spiking Neural Network
-In order to train a SNN model follow the steps below:
 
-1. Download the [spiking_neural_network.ipynb](https://github.com/sotirischatzimiltis/MscThesis/blob/main/SpikingNeuralNetwork/spiking_neural_network.ipynb ).
-> Note: Alternatively launch the **spiking_neural_network.ipynb** through the launch button
-2. Open [Colab](https://colab.research.google.com/notebooks/welcome.ipynb) and sign in to your Google account. If you do not have a Google account, you can create one [here](https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp).
-
-3. Go to _File > Upload notebook > Choose file_ and browse to find the downloaded notebook file [spiking_neural_network.ipynb](https://github.com/sotirischatzimiltis/MscThesis/blob/main/SpikingNeuralNetwork/spiking_neural_network.ipynb ). If you have already uploaded the notebook to Colab you can open it with _File > Open notebook_ and choose **spkiking_neural_network.ipynb**. 
-
-3. Once the notebook is loaded, go to _Runtime > Change runtime type_ and from the dropdown menu, under **Hardware accelerator**, choose **GPU** and click **Save**.
-
-5. Now you can begin the experiments. All you have to do is to upload the dataset you want and set the parameters in the cell under **Datasets** section.
-
-6. To train the model go to _Runtime > Run all_ or click on the first cell and use **Shift + Enter** to execute each cell one by one.
-
-7. The hyper parameters of the model can be modified in the cell under **Set Train Arguments** section.
-
-##### Set Train Arguments
-1. bsize: Batch Size
-2. nhidden: Number of hidden nodes
-3. nsteps: Number of input time steps
-4. b: beta/decay factor of membrane potential 
-5. learning_rate: Learninig Rate of optimizer
-6. nepochs: Number of training epochs
  
- #### Traditional ML techniques
- 1. Download either the [binary](https://github.com/sotirischatzimiltis/MscThesis/blob/main/TraditionalML/traditionalml_binary_classification.py) or [multiclass](https://github.com/sotirischatzimiltis/MscThesis/blob/main/TraditionalML/traditionalml_multiclass_classification.py) classification python script.
-
- 2. Put the correct paths to the test and train datasets.
- 
- 3. Execute the script.
-  > Note: No need to assign values to hyperparameters. The script uses gridsearchCV using two-fold cross validation to find the best hyperparameters from a given list 
+ #### Split Learning
+ 1. Split learning can be applied with one or more clients participating.
+ 2. In case you want to use one client and a server we can download the following scripts: [label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/split_learning_one_client_script.py), [no label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/split_learning_no_label_sharing_one_client.py)
+ 3. For multiple clients download the specific scripts: [label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/traditional_split_learning_withvalidation.py), [no label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/traditional_split_learning_no_label_sharing_withvalidation.py)
+> Note: [model.py](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/models.py)  auxiliary script should be downloaded 
  
  #### Federated Learning
  > Note: For this part it is better to follow the documentation provided by Flower [here](https://flower.dev/docs/)
- 1. Open the experiment folder you want to recreate: [MLP](https://github.com/sotirischatzimiltis/MscThesis/tree/main/FederatedLearning/MLP) , [SNN](https://github.com/sotirischatzimiltis/MscThesis/tree/main/FederatedLearning/SNN) or [LogReg](https://github.com/sotirischatzimiltis/MscThesis/tree/main/FederatedLearning/LogReg).  
- 2. Download the files of the experiment.
-    > Note: The client and server scripts do not contain RSA encryption. For utilising encryption as well follow the documentation provided by flower
- 3. Open the terminal and make sure you satisfy the requirements needed to run the experiments
- 4. Set server variables: 
-     - Set global test path 
-     - MLP: network variables & batch_size
-     - SNN: network variables & batch_size
-     - LogReg: alter logistic regression parameters if you wish
- 5. Set client variables:
-      - Set local train and test paths
-      - MLP: network variables & batch_size
-      - SNN: network variable & batch_size
-      - LogReg: alter logistic regression parameters if you wish
- 6. One terminal is needed for the server and one terminal is needed for every client (alternatively a script can be created) 
+ 1. Download the file necessary: [client](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/fl_client_script.py), [server](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/fl_server_script.py)
+> Note: [model.py](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/models.py)  auxiliary script should be downloaded 
