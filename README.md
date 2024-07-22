@@ -23,7 +23,9 @@ Data traffic is captured, and passed through the pre-processing stage, and then 
  1. Split learning can be applied with one or more clients participating.
  2. In case you want to use one client and a server we can download the following scripts: [label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/split_learning_one_client_script.py), [no label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/split_learning_no_label_sharing_one_client.py)
  3. For multiple clients download the specific scripts: [label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/traditional_split_learning_withvalidation.py), [no label sharing](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/traditional_split_learning_no_label_sharing_withvalidation.py)
-> Note: [model.py](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/models.py)  auxiliary script should be downloaded 
+> Note: [model.py](https://github.com/sotirischatzimiltis/IEEE_OJ_COMS_SG_IDS/blob/main/Scripts/models.py)  auxiliary script should be downloaded
+> 
+> To execute the code: mpiexec -n <number_of_clients> python <script_name>
  
  #### Federated Learning
  > Note: For this part it is better to follow the documentation provided by Flower [here](https://flower.dev/docs/)
